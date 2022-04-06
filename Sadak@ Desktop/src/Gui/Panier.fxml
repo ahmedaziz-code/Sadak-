@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #FFFFFF;" styleClass="mainFxmlClass" stylesheets="@../Css/Ajouterraef.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.PanierController">
+    <children>
+      <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox prefHeight="80.0" prefWidth="1100.0" stylesheets="@../Css/affmesoeuves.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="85.0" prefWidth="1000.0" styleClass="oeuvre-choisi" stylesheets="@../Css/Ajouterraef.css">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="55.0" prefWidth="256.0" style="-fx-background-color: white; -fx-background-radius: 25;" text="Panier" textFill="#a65959">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="130.0" />
+                           </HBox.margin>
+                        </Label>
+                        <HBox prefHeight="85.0" prefWidth="275.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="13.0" right="13.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <left>
+            <VBox prefHeight="573.0" prefWidth="322.0" styleClass="right-bar" stylesheets="@../Css/Ajouterraef.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="110.0" prefWidth="200.0" />
+                  <VBox fx:id="chosenFruitCard" alignment="CENTER" focusTraversable="true" prefHeight="665.0" prefWidth="282.0" styleClass="oeuvre-choisi" stylesheets="@../Css/Ajouterraef.css">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox fillHeight="false" prefHeight="37.0" prefWidth="282.0">
+                           <children>
+                              <Label fx:id="nomC" alignment="TOP_LEFT" prefHeight="48.0" prefWidth="276.0" style="-fx-background-color: #0000;" text="Nom">
+                                 <font>
+                                    <Font name="Cambria Bold" size="19.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="150.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="prixC" prefHeight="30.0" prefWidth="308.0" text="prix">
+                                 <font>
+                                    <Font name="Cambria Bold" size="19.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="150.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" right="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <ImageView fx:id="imgC" fitHeight="232.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="Supprimer" layoutX="34.0" layoutY="410.0" mnemonicParsing="false" onAction="#DeletePanier" prefHeight="45.0" prefWidth="234.0" styleClass="add-btn" stylesheets="@../Css/Ajouterraef.css" text="Supprimer" textFill="#828282">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <graphic>
+                              <FontAwesomeIconView fill="#878787" glyphName="TRASH_ALT" size="22" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="20.0" prefWidth="435.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="744.0" prefWidth="834.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="71.0" prefWidth="778.0">
+                     <children>
+                        <Pane prefHeight="61.0" prefWidth="777.0">
+                           <children>
+                              <TextField fx:id="recho" layoutX="114.0" layoutY="16.0" prefHeight="40.0" prefWidth="492.0" promptText="Chercher dans votre panier" styleClass="transparent" stylesheets="@../Css/affmesoeuves.css">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="23.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="SearchO" layoutX="620.0" layoutY="16.0" mnemonicParsing="false" onAction="#SearchO" prefHeight="40.0" prefWidth="44.0" styleClass="search-button" stylesheets="@../Css/affmesoeuves.css" textFill="WHITE">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="18" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="307.0" prefWidth="778.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane fx:id="scrollO" prefHeight="300.0" prefWidth="778.0" styleClass="transparent" stylesheets="@../Css/Ajouterraef.css">
+                           <content>
+                              <GridPane fx:id="grid" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="403.0" prefWidth="766.0" styleClass="oeuvre-choisi" stylesheets="@../Css/Ajouterraef.css">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <HBox.margin>
+                              <Insets top="30.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="59.0" prefWidth="778.0">
+                     <children>
+                        <Pane prefHeight="100.0" prefWidth="779.0">
+                           <children>
+                              <Button fx:id="Valider" layoutX="133.0" layoutY="9.0" mnemonicParsing="false" onAction="#Valider" prefHeight="42.0" prefWidth="183.0" style="-fx-background-color: #D36A6A;" styleClass="add-btn" stylesheets="@../Css/Ajouterraef.css" text="Valider" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CART_PLUS" size="22" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="Retour" layoutX="502.0" layoutY="9.0" mnemonicParsing="false" onAction="#Retour" prefHeight="42.0" prefWidth="183.0" style="-fx-background-color: #878787;" styleClass="add-btn" stylesheets="@../Css/Ajouterraef.css" text="Revenir" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="STEP_BACKWARD" size="22" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+    
+</AnchorPane>

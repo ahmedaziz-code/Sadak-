@@ -1,0 +1,86 @@
+{% extends "base-front.html.twig" %}
+
+{% block famille %}
+
+    <div>
+        <table class="styled-table" style="margin: auto">
+            <thead>
+            <tr>
+                <td>Nom Famille</td>
+                <td>Etat Famille</td>
+                <td>Nombre des Enfants</td>
+                <td>Nombre des Enfants MALADES</td>
+                <td>Remarque</td>
+                <td>Date de Verification</td>
+                <td>Ajouter Remarque</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for f in famille %}
+                <tr>
+                    <td>{{ f.nomP }}</td>
+                    <td>{{ f.verifF }}</td>
+                    <td>{{ f.nbrEnf }}</td>
+                    <td>{{ f.nbrEnfMalade }}</td>
+                    {% if f.remarque == 0 %}
+                        <td>pas encore</td>
+                    {% else%}
+                        <td>{{ f.remarque }}</td>
+                    {% endif %}
+
+                    {% if f.verifF=='en cours de verification' or f.VerifF=='non verifiee'%}
+                        <td>pas encore</td>
+                    {% elseif f.verifF=='verifiee' %}
+                        <td>{{ f.dateV.format('d/m/y H') }}</td>
+                    {% endif %}
+                    <td><a href="{{ path('AjoutR', {'id':f.idF}) }}">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAASNJREFUWEftl1ERwjAMhj8UgARwgANwgAYc4ABQgAUkgANQABKQAArgwm1cgW1Jt5YbvfVlD0uTr3+SdenRstVrGQ9JAN0dVcsOZLEpTE4dhSzBLDb/DTQGNsA0UtHvgDVw/vRflLIhcAIGkWByt1dgBMjztYqAFpk6kXme7ufAVgNaActf0GRpk3iVCrlAR+AQGE7qcpL5lDryAvraEADOPXBaQK7UvkK5qQ+mUJNid1OTLpCkrO6XWzo179ZgCvnWTZl9ukBal0nhWlYwhbQus/5bpQukddnbnVSRu2AKWerDYtMBaSp1CnUKaQpo771rqHVTh8xjF6CvHbXh+xsgM6A6l0kcmVxF2lnDoGXb95l/0+QaicHm1npD27wFsGod0AOULnQlOcyoqwAAAABJRU5ErkJggg=="/>
+                        </a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>$
+    </div>
+{% endblock %}
+{% block famille2 %}
+    <h1 style="text-align: center; margin-top: 30px; margin-bottom: 30px">Famille En Cours De Vérification</h1>
+    <div>
+        <table class="styled-table1" style="margin: auto; text-align: center" id="44">
+            <thead>
+            <tr>
+                <td>Nom Famille</td>
+                <td>Etat Famille</td>
+                <td>Nombre des Enfants</td>
+                <td>Nombre des Enfants MALADES</td>
+                <td>Remarque</td>
+                <td>Date de Verification</td>
+                <td>Ajouter Remarque</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for f in familleEn %}
+                <tr>
+                    <td>{{ f.nomP }}</td>
+                    <td>{{ f.verifF }}</td>
+                    <td>{{ f.nbrEnf }}</td>
+                    <td>{{ f.nbrEnfMalade }}</td>
+                    {% if f.remarque == 0 %}
+                        <td>pas encore</td>
+                    {% else%}
+                        <td>{{ f.remarque }}</td>
+                    {% endif %}
+                    {% if f.verifF=='en cours de verification' or f.VerifF=='non verifiee'%}
+                        <td>pas encore</td>
+                    {% elseif f.verifF=='verifiee' %}
+                        <td>{{ f.dateV.format('d/m/y H') }}</td>
+                    {% endif %}
+                    <td><a href="{{ path('AjoutR', {'id':f.idF}) }}">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAASNJREFUWEftl1ERwjAMhj8UgARwgANwgAYc4ABQgAUkgANQABKQAArgwm1cgW1Jt5YbvfVlD0uTr3+SdenRstVrGQ9JAN0dVcsOZLEpTE4dhSzBLDb/DTQGNsA0UtHvgDVw/vRflLIhcAIGkWByt1dgBMjztYqAFpk6kXme7ufAVgNaActf0GRpk3iVCrlAR+AQGE7qcpL5lDryAvraEADOPXBaQK7UvkK5qQ+mUJNid1OTLpCkrO6XWzo179ZgCvnWTZl9ukBal0nhWlYwhbQus/5bpQukddnbnVSRu2AKWerDYtMBaSp1CnUKaQpo771rqHVTh8xjF6CvHbXh+xsgM6A6l0kcmVxF2lnDoGXb95l/0+QaicHm1npD27wFsGod0AOULnQlOcyoqwAAAABJRU5ErkJggg=="/>
+                        </a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <button  class="buttonV" onclick="window.location.href='http://127.0.0.1:8000/afficheF'" > Liste des Famille</button>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Panier{% endblock %}
+
+{% block body %}
+    <section style="margin: 50px">
+
+    </section>
+    <section class="icons-container">
+
+        <div class="icons">
+            <div class="content" >
+                <h3>Etape 1</h3>
+                <p  >Commander</p>
+            </div>
+        </div>
+
+        <div class="icons" >
+            <div class="content">
+                <h3>Etape 2</h3>
+                <p >Livraison</p>
+            </div>
+        </div>
+
+        <div class="icons" style="background-color: #15275c">
+            <div class="content">
+                <h3>Etape 3</h3>
+                <p style="color: white">Confirmer</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <div class="content">
+                <h3>Etape 4</h3>
+                <p>Facture</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="services" id="services">
+
+        <h1 class="heading"> <span>Confirmer</span> </h1>
+        <center>  {{ include('panier/_form.html.twig') }} </center><br><br>
+        <center><p style="font-size: 20px;color: red">Total a payer: {{ prix }} DT </center></p>
+        <br>
+        <center><div class="col-lg-8 col-md-8">
+                <div class="banner_text_iner">
+                    <table class="table progress-table">
+                        {% for livraison in livraisons %}
+                            <tbody>
+                            <tr>
+                                <th>LivraisonId</th>
+                                <td>{{ livraison.livraisonId }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <td>{{ livraison.nom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Prenom</th>
+                                <td>{{ livraison.prenom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Adresse</th>
+                                <td>{{ livraison.adresse }}</td>
+                            </tr>
+                            </tbody>
+                        {% else %}
+                            <h4 style="font-size: 30px;color: red; padding-top: 10px">Pas de Livraisons</h4>
+                        {% endfor %}
+                    </table>
+                </div></div></center>
+        <br></br>
+        <div class="box-container">
+            {% for panier_temp in panier_temps %}
+                <div class="box">
+                    <i class="fas"><img style="width: 20%" src="/uploads/{{panier_temp.refProduit.image}}" alt="produit"></i>
+                    <h3>{{ panier_temp.refProduit.nomProduit }}</h3>
+                    <p>Quantite: {{ panier_temp.quantiteProduit }}</p>
+                    <p>Prix Unitaire: {{ panier_temp.refProduit.prixProduit }}</p>
+                    <p>Prix Tot: {{ panier_temp.quantiteProduit*panier_temp.refProduit.prixProduit }}</p>
+
+                </div>
+            {% else %}
+                <center> <h3 style="font-size: 30px;color: red; padding-top: 10px">Panier Vide</h3></center>
+
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+
+{% endblock %}

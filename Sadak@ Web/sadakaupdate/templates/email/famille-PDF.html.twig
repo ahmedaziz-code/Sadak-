@@ -1,0 +1,10 @@
+{% extends 'email.html.twig' %}
+{% block content %}
+    <row>
+        <columns>
+            <spacer size="35"></spacer>
+            {{ include('email/family-table.html.twig') }}
+            <spacer size="10"></spacer>
+        </columns>
+    </row>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base-back.html.twig' %}
+
+{% block famille %}
+
+
+    {# <style>
+        td {
+            text-align: center;
+        }
+    </style> #}
+    <h1 style="text-align: center; font-size: 3em">La liste des Famille</h1>
+    <table border="1" class="styled-table" style="margin: auto">
+        <thead>
+        <tr>
+
+            <td>Nom</td>
+            <td>Etat</td>
+            <td>Supprimer</td>
+            <td>Modifier</td>
+            <td>Vérifier</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for i in familles %}
+            <tr >
+
+
+                <td>{{ i.nomP }}</td>
+                <td>{{ i.verifF }}</td>
+                <td><a href="{{ path('sup', {'id':i.idF}) }}">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAPhJREFUWEftl2ENwjAQhb85wAIKwAGggOAAB4ACwAFScAAoAAngAAeQLvxotrXX7kayLNff99pvr69dr6Bno+gZD4MAGgEXYCq4+wAWwDtnF9o4dAaWiYu42lVibVmWC3QCNjkLAEfgkKppAnLifeoEyroarAFVHE1ySLkLOrkU6jkw0y1RU9+Aa2hOCegfAY+eOgOS7qVBOOR/xCcQzlhN5xkyIH8Xmo69OWQO+Q60uYcsQ5Yhy5D0bNU65Lc0ofYmVtP5z1X7ou0d0A5wDWfjkC5G17/ftZZU9GPg2RbI6dbAFpgowV6/eVy/HxySQ0qGfLkBSZ59AaJzWCXJNDkwAAAAAElFTkSuQmCC"/>
+                    </a></td>
+                <td><a href="{{ path('mod',{'id':i.idF}) }}">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAV9JREFUWEfl1eENwiAQBeDXCXQEnUDdQEdwA0dwFDdwBN1A3cBRdALNJZAQAtwDuaSN/aNJL/BxfcCAkT3DyDz4K9AcwAqA/D4AvJivYdWhNYALgIVDCGYH4KmhLECCubnOhPNTqN6gGPN2ohnbqZ6gFGbrIHcAIWqZy1QvUA7jMyPvQ9QewDWVpx6gVGbivMQ1ZqBcgGXxHiX/w5BLrmT3JY+BXzqU+kxHAKcoLwKSs0gewUiustu/FVTKTJwXHxUVI4UtIC3AMu4BwDkILYVpATEYpiZ7YNd0iJmIqSneHiyImYip0a4yKkPMREyNimEyxEzE1FAYDcRMxNTQGA0kJ6m/EFPbtjtGA32CpW2i09UEUwMKd6MZpgVkiqkBpYJJXwc1qS4djGGG4jFNMK0dMsNooJpOd6tl77JuE2oDTQpUCrW2UOZ9shmtu4yZUKuZPkhbocn7SYXapAPaoF/MD3UlNXZX7AAAAABJRU5ErkJggg=="/>
+                    </a></td>
+                <td><a href="{{ path('sup', {'id':i.idF}) }}">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAetJREFUWEftlu0xBEEQht+LABkQASJABIgAGcgAGRABIkAEyIAIyAARUE/VzFXr252esXvlftz8YWt6pp/rd/pjogVbkwXj0RIoUmQZobEidC5pR9JWuvBF0r2kq8hB634kGQDXBsTfD9iJJP6OsiIgHG0GnrDZHoVGKqY9Mp0lR6+STiU9pe9dSZcG9kIS9oNXKUI4592w9gxMdgrUY/p4lsT34FUC+pS0kjz02X2nfWzXBtMEkrUAfUlabQQ6lnTjz/yXZIAcJSCydLpKQPZRk0l8P6STB+nB57rU8qgzTIYAaBqpMdKeDMxgkWoe5lYS0lVFCCMccUlfLQKGC2sKYwiDwyhCmZwahEy+dVCLuhbOycD8PqpgWoAiKey+dZ7fhpVlRqYWybBdT5L5d4JMSPbuaH007HYRJopQ1Fizo64G2wUVwpSAbMrXysUZ0j8vC1UF0wfE470zF1OF6Ws+k4gg/Su3F44cpjnJQvH/r9Qu/UKfZZT/N9MGKIRcRhvpWtgTif20id1GwT6MtgfyI0dtwbNzU0vVngH0QHbk8OEv/Tor86BRxAPZDs840SeVh0O6DyPbn0cRD5Tnm6gkdEVryNnpfV1vKG+2jqTWvvVsL1CYBfM2qG2u8+ZYRqg6wkvJolAtXIR+AGqxYiVKmPjKAAAAAElFTkSuQmCC"/>
+                    </a></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    <button  class="buttonV" onclick="window.location.href='http://127.0.0.1:8000/addFamille'" > Ajouter Famille</button>
+{% endblock %}

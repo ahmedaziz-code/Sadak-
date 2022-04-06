@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PanierTemp{% endblock %}
+
+{% block body %}
+    <h1>PanierTemp</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ panier_temp.id }}</td>
+            </tr>
+            <tr>
+                <th>QuantiteProduit</th>
+                <td>{{ panier_temp.quantiteProduit }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('panier_temp_index') }}">back to list</a>
+
+    <a href="{{ path('panier_temp_edit', {'id': panier_temp.id}) }}">edit</a>
+
+    {{ include('panier_temp/_delete_form.html.twig') }}
+{% endblock %}

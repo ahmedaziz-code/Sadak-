@@ -1,0 +1,11 @@
+
+{% for s in services %}
+
+<div class="box">
+    <i class="far fa-handshake"></i>
+    <h3>{{ s.name }}</h3>
+    <p>{%  if s.description|length <=120  %} {{ s.description}} {% else %} {{ s.description|slice(0,120) }}...{% endif %}</p>
+    <a href="#" class="btn"> Plus de détails</a>
+</div>
+
+{% endfor %}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="940.0" prefWidth="1708.0" style="-fx-background-color: #FAEEE0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.EventDescriptionController">
+   <children>
+      <VBox layoutX="16.0" layoutY="9.0" prefHeight="918.0" prefWidth="207.0" style="-fx-background-radius: 25; -fx-background-color: #F4A442;">
+         <padding>
+            <Insets right="2.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="230.0" layoutY="11.0" prefHeight="96.0" prefWidth="1467.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-border-color: #F4A442; -fx-border-radius: 25; -fx-border-width: 2.25;" />
+      <TextField layoutX="269.0" layoutY="35.0" prefHeight="43.0" prefWidth="580.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 25;" />
+      <HBox alignment="CENTER" layoutX="1205.0" layoutY="26.0" prefHeight="61.0" prefWidth="70.0" style="-fx-background-radius: 20; -fx-background-color: #F4A442;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="1596.0" layoutY="26.0" prefHeight="61.0" prefWidth="70.0" style="-fx-background-radius: 20; -fx-background-color: #F4A442;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="1332.0" layoutY="26.0" prefHeight="61.0" prefWidth="70.0" style="-fx-background-radius: 20; -fx-background-color: #F4A442;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <VBox fx:id="chosenEventCard" layoutX="1255.0" layoutY="128.0" prefHeight="800.0" prefWidth="442.0" style="-fx-border-width: 2.25; -fx-border-color: #F4A442; -fx-border-radius: 25; -fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <ImageView fx:id="eventImg" fitHeight="276.0" fitWidth="422.0" pickOnBounds="true">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="15.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../Images/online-news-concept-looking-upcoming-events-web-page-idea-social-media-network-isolated-flat-vector-illustration-123154032.jpg" />
+               </image>
+            </ImageView>
+            <HBox prefHeight="45.0" prefWidth="438.0">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="112.0" text="Date">
+                     <font>
+                        <Font name="System Bold" size="37.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="dateLabel" prefHeight="54.0" prefWidth="301.0" text="2020-2021">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="68.0" prefWidth="438.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="54.0" prefWidth="388.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="37.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="descriptionLabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="192.0" prefWidth="401.0" text="about taking a break and enjoying yourself. We want this weekend to feel like your hackathon getaway. Join us for all sorts of vacation themed mini-events and games. Pack your bags, we'll see you soon!" wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="239.0" styleClass="login-btn" stylesheets="@../Css/Design.css" text="Pariticiper">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="120.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Label alignment="TOP_LEFT" prefHeight="33.0" prefWidth="239.0" text="Organisé par Mohammed" wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="120.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <ScrollPane fx:id="scroll" layoutX="230.0" layoutY="128.0" prefHeight="793.0" prefWidth="1018.0">
+         <content>
+            <GridPane fx:id="grid" prefHeight="116.0" prefWidth="119.0">
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

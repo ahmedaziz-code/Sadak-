@@ -1,0 +1,77 @@
+{% extends '/backAdmin/back-office/tables.html.twig' %}
+
+{% block admin %}
+    <a href="{{ path('admin_event_new') }}" class="btn btn-primary pull-right">
+        Create <span class="fa fa-plus-circle"></span>
+    </a>
+    <h1>All Events {{ events.getTotalItemCount }} </h1>
+    <form>
+        <div class="input-group mb-3">
+            <input type="text"
+                   name="q"
+                   class="form-control"
+                   placeholder="Search..."
+                   value="{{ app.request.query.get('q') }}"
+            >
+            <div class="input-group-append">
+                <button type="submit"
+                        class="btn btn-outline-secondary">
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <table border="1" class="table" style="margin: auto">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Organiser</th>
+            <th>Published?</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.eventName }}</td>
+                <td>{{ event.eventOrganiser.email }}</td>
+                <td>
+                    <span class="fa fa-{{ event.isPublished ? 'check' : 'times' }}"></span>
+                </td>
+                <td><a href="{{ path('admin_event_edit',{
+                        id: event.id
+                    }) }}">
+                        <span class="fa fa-pencil"></span>
+                    </a></td>
+                <td><a href="{{ path('admin_event_supp',{
+                        id: event.id
+                    }) }}">
+                        <span class="fa fa-times"></span>
+                    </a></td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ knp_pagination_render(events) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="940.0" prefWidth="1708.0" style="-fx-background-color: #FAEEE0;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.AcceuilController">
+   <children>
+      <VBox layoutX="18.0" layoutY="12.0" prefHeight="918.0" prefWidth="207.0" style="-fx-background-radius: 25; -fx-background-color: #F4A442; -fx-border-color: white; -fx-border-width: 2.25; -fx-border-radius: 25;">
+         <padding>
+            <Insets right="2.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="230.0" layoutY="11.0" prefHeight="96.0" prefWidth="1467.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-border-color: #F4A442; -fx-border-radius: 25; -fx-border-width: 2.25;" />
+      <TextField layoutX="269.0" layoutY="35.0" prefHeight="43.0" prefWidth="580.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 25;" />
+      <HBox alignment="CENTER" layoutX="1205.0" layoutY="26.0" prefHeight="61.0" prefWidth="70.0" style="-fx-background-radius: 20; -fx-background-color: #F4A442;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="1596.0" layoutY="26.0" prefHeight="61.0" prefWidth="70.0" style="-fx-background-radius: 20; -fx-background-color: #f4a442;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="1332.0" layoutY="26.0" prefHeight="61.0" prefWidth="70.0" style="-fx-background-radius: 20; -fx-background-color: #f4a442;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <Button fx:id="btnHome" layoutX="30.0" layoutY="230.0" mnemonicParsing="false" onAction="#goHome" prefHeight="65.0" prefWidth="183.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Acceuil" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEvent" layoutX="32.0" layoutY="320.0" mnemonicParsing="false" onAction="#goEvent" prefHeight="65.0" prefWidth="183.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Événements" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnShop" layoutX="32.0" layoutY="414.0" mnemonicParsing="false" onAction="#goShop" prefHeight="65.0" prefWidth="183.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Magasin" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnService" layoutX="32.0" layoutY="502.0" mnemonicParsing="false" onAction="#goService" prefHeight="65.0" prefWidth="183.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Services" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnOpt" layoutX="31.0" layoutY="603.0" mnemonicParsing="false" onAction="#goOpt" prefHeight="65.0" prefWidth="183.0" style="-fx-background-color: #FAEEE0; -fx-background-radius: 25;" text="Famille" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnContact" layoutX="32.0" layoutY="778.0" mnemonicParsing="false" onAction="#goHome" prefHeight="65.0" prefWidth="183.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Contact" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAbout" layoutX="32.0" layoutY="691.0" mnemonicParsing="false" onAction="#goAbout" prefHeight="65.0" prefWidth="183.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="À propos" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <VBox layoutX="238.0" layoutY="123.0" prefHeight="267.0" prefWidth="955.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <ImageView fitHeight="241.0" fitWidth="955.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <VBox layoutX="1210.0" layoutY="123.0" prefHeight="789.0" prefWidth="466.0" style="-fx-background-radius: 25; -fx-background-color: white;">
+         <children>
+            <HBox prefHeight="73.0" prefWidth="466.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="298.0" text="Actualités">
+                     <font>
+                        <Font name="System Bold" size="37.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="eventgo" mnemonicParsing="false" onAction="#goEvent" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: #FAEEE0; -fx-background-radius: 25; -fx-cursor: hand;" text="Voir Tous">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </HBox>
+            <ImageView fitHeight="293.0" fitWidth="457.0" pickOnBounds="true">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="5.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../../../../../xampp/htdocs/img/Image-1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="293.0" fitWidth="457.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../../../xampp/htdocs/img/3690581446001_5711179779001_5711164078001-vs.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="5.0" top="40.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <Label layoutX="1248.0" layoutY="524.0" text="South Yorkshire's Community Foundation">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1334.0" layoutY="871.0" text="THE BALTIMORE SUN" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PanierTemp{% endblock %}
+
+{% block body %}
+    <section style="margin: 100px"></section>
+
+
+<center><h1>Modifier votre quantite</h1>
+
+    {{ include('panier_temp/_form.html.twig',  {'button_label': 'modifier'}) }}
+
+    <a href="{{ path('panier_temp_index') }}">Retour </a> </center>
+
+
+{% endblock %}

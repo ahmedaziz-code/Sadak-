@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section style="margin: 50px">
+
+    </section>
+    <section class="icons-container">
+
+        <div class="icons" style="background-color: #15275c">
+            <div class="content" >
+                <h3>Etape 1</h3>
+                <p style="color: white" >Commander</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <div class="content">
+                <h3>Etape 2</h3>
+                <p>Livraison</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <div class="content">
+                <h3>Etape 3</h3>
+                <p>Confirmer</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <div class="content">
+                <h3>Etape 4</h3>
+                <p>Facture</p>
+            </div>
+        </div>
+
+    </section>
+    <br>
+
+    {% for flashMessage in app.session.flashbag.get('green') %}
+
+        <div class="alert alert-success">
+            <center>{{ flashMessage }}</center>
+        </div>
+
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('red') %}
+
+        <div class="alert alert-danger">
+            <center>{{ flashMessage }}</center>
+        </div>
+
+    {% endfor %}
+
+    <section class="services" id="services">
+
+        <h1 class="heading"> Ma <span>Panier</span> </h1>
+
+        <center><a href="{{ path('livraison_new') }}" class="btn">Commander</a></center>
+        <center><a href="{{ path('produit_index') }}" class="btn">Produits</a></center>
+
+        <center><p style="font-size: 20px;color: red">Total a payer: {{ prix }} DT </center></p>
+        <br>
+        <div class="box-container">
+            {% for panier_temp in panier_temps %}
+            <div class="box">
+                <i class="fas"><img style="width: 20%" src="/uploads/{{panier_temp.refProduit.image}}" alt="produit"></i>
+                <h3>{{ panier_temp.refProduit.nomProduit }}</h3>
+                <p>Quantite: {{ panier_temp.quantiteProduit }}</p>
+                <p>Prix Unitaire: {{ panier_temp.refProduit.prixProduit }}</p>
+                <p>Prix Tot: {{ panier_temp.quantiteProduit*panier_temp.refProduit.prixProduit }}</p>
+                <a href="{{ path('panier_temp_edit', {'id': panier_temp.id}) }}" class="btn"> Modifier</a>
+                {{ include('panier_temp/_delete_form.html.twig') }}
+            </div>
+            {% else %}
+               <center> <h3 style="font-size: 30px;color: red; padding-top: 10px">Panier Vide</h3></center>
+
+            {% endfor %}
+        </div>
+
+    </section>
+{% endblock %}
+
+

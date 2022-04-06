@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="880.0" prefWidth="1310.0" style="-fx-background-color: #FAEEE0;" stylesheets="@../Css/tableview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.EventManagementVLController">
+   <children>
+      <TextField fx:id="txtpath" layoutX="635.0" layoutY="273.0" prefHeight="45.0" prefWidth="230.0" />
+      <VBox layoutX="26.0" layoutY="101.0" prefHeight="740.0" prefWidth="860.0" stylesheets="@../Css/Design.css">
+         <styleClass>
+            <String fx:value="round" />
+            <String fx:value="white" />
+         </styleClass>
+      </VBox>
+      <VBox layoutX="1246.0" layoutY="10.0" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="445.0" layoutY="18.0" prefHeight="72.0" prefWidth="421.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Gestion des événements" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <VBox layoutX="899.0" layoutY="105.0" prefHeight="740.0" prefWidth="395.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <TableView fx:id="EventTable" prefHeight="752.0" prefWidth="364.0" style="-fx-background-radius: 25;">
+              <columns>
+                <TableColumn fx:id="neCol" prefWidth="130.0" text="Nom(évé)" />
+                  <TableColumn fx:id="idCol" minWidth="3.0" prefWidth="3.0" text="id" visible="false" />
+                <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="94.0" text="Date-D" />
+                  <TableColumn fx:id="dateFCol" maxWidth="164.0" minWidth="0.0" prefWidth="105.0" text="Date-F" />
+                  <TableColumn fx:id="buttonCol" maxWidth="164.0" minWidth="0.0" prefWidth="65.0" text="M-S" />
+              </columns>
+            </TableView>
+         </children></VBox>
+      <FontAwesomeIconView fill="#f4a442" glyphName="CLOSE" layoutX="1254.0" layoutY="48.0" onMouseClicked="#close" size="40" style="-fx-cursor: hand;" wrappingWidth="33.0" />
+      <Label layoutX="72.0" layoutY="541.0" prefHeight="76.0" prefWidth="183.0" text="Image">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="370.0" prefHeight="76.0" prefWidth="218.0" text="Description">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="191.0" prefHeight="76.0" prefWidth="247.0" text="Organisateur">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="284.0" prefHeight="76.0" prefWidth="172.0" text="Date Début">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="479.0" layoutY="191.0" prefHeight="76.0" prefWidth="159.0" text="Nom (évé)">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="284.0" layoutY="207.0" prefHeight="45.0" prefWidth="183.0" />
+      <TextField fx:id="txtEname" layoutX="637.0" layoutY="207.0" prefHeight="45.0" prefWidth="230.0" />
+      <TextField fx:id="txtdate" layoutX="282.0" layoutY="291.0" prefHeight="48.0" prefWidth="137.0" />
+      <JFXDatePicker fx:id="datePicker" defaultColor="BLACK" editable="false" focusTraversable="false" layoutX="428.0" layoutY="286.0" onAction="#setDate" prefHeight="59.0" prefWidth="39.0" />
+      <TextField fx:id="txtDescription" alignment="TOP_LEFT" layoutX="284.0" layoutY="372.0" prefHeight="149.0" prefWidth="589.0" />
+      <Button fx:id="btnimage" layoutX="65.0" layoutY="617.0" mnemonicParsing="false" onAction="#ImageChooser" prefHeight="59.0" prefWidth="191.0" style="-fx-background-color: #f4a442; -fx-background-radius: 25;" text="Selectionner " textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imageView" fitHeight="219.0" fitWidth="589.0" layoutX="283.0" layoutY="529.0" onDragDetected="#ImageChooser" opacity="0.75" pickOnBounds="true" />
+      <Button fx:id="btnAjouter" layoutX="46.0" layoutY="755.0" mnemonicParsing="false" onAction="#SaveEvent" prefHeight="63.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Ajouter" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="btnAjouter1" layoutX="215.0" layoutY="755.0" mnemonicParsing="false" onAction="#clean" onMouseClicked="#clean" prefHeight="59.0" prefWidth="125.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Clean" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <TextField fx:id="filterField" layoutX="280.0" layoutY="125.0" prefHeight="56.0" prefWidth="474.0" />
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="190.0" layoutY="172.0" size="55" />
+      <Label layoutX="479.0" layoutY="278.0" prefHeight="76.0" prefWidth="172.0" text="Date Fin">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDateF" layoutX="638.0" layoutY="292.0" prefHeight="48.0" prefWidth="127.0" />
+      <JFXDatePicker fx:id="datePickerF" defaultColor="BLACK" editable="false" focusTraversable="false" layoutX="777.0" layoutY="285.0" onAction="#setDateF" prefHeight="59.0" prefWidth="39.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<table border="1" class="styled-table" style="margin: auto">
+    <tr>
+        <th>Nombre des demandes</th>
+        <th>importance</th>
+        <th>Nombre des produits</th>
+        <th>Nombre des servises</th>
+    </tr>
+    {% set nbr = 0 %}
+    <td  {% for d in Demande %}>
+        {% set nbr = nbr + 1 %}
+        {% endfor %}
+        {{ nbr }}
+    </td>
+    <td>
+        {% if nbr < 5 %}
+        {{ "On n'a pas encore atteint le seuil des demande pour planifier un évènement" }}
+        {% elseif nbr < 10 %}
+        {{ "On a atteint le seuil des demandes, on doit planifier un évenement" }}
+        {% else  %}
+        {{ "On a dépassé le seuil des demandes, on doit planifier plusieurs évenements" }}
+        {% endif %}
+    </td>
+    {% set pr = 0 %}
+
+    <td {% for d in Demande %} >
+        {% if d.category  == "Produit" %}
+            {% set pr = pr + 1 %}
+
+        {% endif %}
+        {%  endfor %}
+        {{ pr }}
+    </td>
+    {% set sv = 0 %}
+    <td {% for d in Demande %} >
+        {% if d.category  == "Service" %}
+            {% set sv = sv + 1 %}
+
+        {% endif %}
+        {%  endfor %}
+        {{ sv }}
+    </td>
+
+</table>
+    <table>
+        <a href="{{ path('s') }}">dffd</a>
+    </table>
+{% endblock %}

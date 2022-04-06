@@ -1,0 +1,96 @@
+{% extends 'base-back.html.twig' %}
+{% block famille %}
+
+    {#
+    <style>
+        table{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+        tr{
+            flex: 1;
+        }
+        .tdmarg{
+            position: relative;
+            margin-bottom: 500px;
+        }
+    </style>
+    #}
+    <div class="tableFamille1">
+        <fieldset class="field">
+            {{ form_start(f, {'attr': {'novalidate':'novalidate'}}) }}
+            <table class="styled-table1" >
+                <tr>
+                    <div class="form-widget">
+                        <td >{{ form_label(f.pays) }}</td>
+                        <td>{{ form_widget(f.pays) }}</td>
+                        <td>{{ form_errors(f.pays) }}</td>
+                        <td>{{ form_label(f.etatF) }}</td>
+                        <td>{{ form_widget(f.etatF) }}</td>
+                        <td>{{ form_errors(f.etatF) }}</td>
+                        <td>{{ form_label(f.villeF) }}</td>
+                        <td>{{ form_widget(f.villeF) }}</td>
+                        <td colspan="6">{{ form_errors(f.villeF) }}</td>
+                    </div>
+
+                </tr>
+                <tr>
+                    <td class="tdmarg">{{ form_label(f.nomP) }}</td>
+                    <td>{{ form_widget(f.nomP) }}</td>
+                    <td>{{ form_errors(f.nomP) }}</td>
+                    <td class="tdmarg">{{ form_label(f.prenomP) }}</td>
+                    <td>{{ form_widget(f.prenomP) }}</td>
+                    <td>{{ form_errors(f.prenomP) }}</td>
+                    <td class="tdmarg">{{ form_label(f.teleP) }}</td>
+                    <td>{{ form_widget(f.teleP) }}</td>
+                    <td>{{ form_errors(f.teleP) }}</td>
+                    <td class="tdmarg">{{ form_label(f.dNaissanceP) }}</td>
+                    <td>{{ form_widget(f.dNaissanceP) }}</td>
+                    <td>{{ form_errors(f.dNaissanceP) }}</td>
+                    <td class="tdmarg">{{ form_label(f.sRevenueP) }}</td>
+                    <td>{{ form_widget(f.sRevenueP) }}</td>
+                    <td>{{ form_errors(f.sRevenueP) }}</td>
+                </tr>
+                <tr>
+                    <td class="tdmarg">{{ form_label(f.nomM, "Nom de la Mère") }}</td>
+                    <td>{{ form_widget(f.nomM) }}</td>
+                    <td>{{ form_errors(f.nomM) }}</td>
+                    <td class="tdmarg">{{ form_label(f.prenomM, "Prenom de la Mère") }}</td>
+                    <td>{{ form_widget(f.prenomM) }}</td>
+                    <td>{{ form_errors(f.prenomM) }}</td>
+                    <td class="tdmarg">{{ form_label(f.teleM) }}</td>
+                    <td>{{ form_widget(f.teleM) }}</td>
+                    <td>{{ form_errors(f.teleM) }}</td>
+                    <td class="tdmarg">{{ form_label(f.dNaissanceM) }}</td>
+                    <td>{{ form_widget(f.dNaissanceM) }}</td>
+                    <td>{{ form_errors(f.dNaissanceM) }}</td>
+                    <td class="tdmarg">{{ form_label(f.sRevenueM) }}</td>
+                    <td>{{ form_widget(f.sRevenueM) }}</td>
+                    <td>{{ form_errors(f.sRevenueM) }}</td>
+                </tr>
+                <tr>
+                    <td class="tdmarg">{{ form_label(f.nbrEnf) }}</td>
+                    <td>{{ form_widget(f.nbrEnf) }}</td>
+                    <td>{{ form_errors(f.nbrEnf) }}</td>
+                    <td class="tdmarg">{{ form_label(f.nbrEnfMalade) }}</td>
+                    <td>{{ form_widget(f.nbrEnfMalade) }}</td>
+                    <td colspan="9">{{ form_errors(f.nbrEnfMalade) }}</td>
+                </tr>
+                <tr>
+                    <td class="tdmarg">{{ form_label(f.rBruteF) }}</td>
+                    <td>{{ form_widget(f.rBruteF) }}</td>
+                    <td>{{ form_errors(f.rBruteF) }}</td>
+                    <td class="tdmarg">{{ form_label(f.besoinF) }}</td>
+                    <td>{{ form_widget(f.besoinF) }}</td>
+                    <td colspan="9">{{ form_errors(f.besoinF) }}</td>
+                </tr>
+            </table>
+            {{ form_end(f) }}
+        </fieldset>
+
+    </div>
+
+{% endblock %}

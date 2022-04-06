@@ -1,0 +1,16 @@
+
+
+
+{{ form_start(eventForm) }}
+
+    {{ form_row(eventForm.eventOrganiser) }}
+    {{ form_row(eventForm.eventName) }}
+    {{ form_row(eventForm.eventDate) }}
+    {{ form_row(eventForm.eventDateF) }}
+    {{ form_row(eventForm.eventContent) }}
+    {{ form_row(eventForm.eventImage) }}
+    {{ form_row(eventForm.eventParticipants) }}
+    {{ form_row(eventForm.categoryEvent) }}
+    {{ form_row(eventForm.publishedAt) }}
+<button type="submit" class="btn btn-primary">{{button_text}}</button>
+{{ form_end(eventForm) }}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1 style="text-align:center">Liste Des Demandes</h1>
+<table border="1" class="styled-table" style="margin: auto">
+<tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Categorie</th>
+    <th>Modifier</th>
+    <th>Supprimmer</th>
+</tr>
+<tr {% for d in Demande %}>
+    <td>{{ d.demandeid }}</td>
+    <td>{{ d.nom }}</td>
+    <td>{{ "01/01/2016" }}</td>
+    <td>{{  d.description }}</td>
+    <td>{{d.type }}</td>
+    <td>{{d.category }}</td>
+    <td><a href="{{ path('update',{'id':d.demandeid}) }}">Modifier</a></td>
+    <td><a href="{{ path('d',{'id':d.demandeid}) }}">Supprimmer</a></td>
+
+</tr{% endfor %}>
+    <tr>
+        <a href="{{ path('i') }}">Consulter l'importance</a>
+    </tr>
+</table>
+{% endblock %}

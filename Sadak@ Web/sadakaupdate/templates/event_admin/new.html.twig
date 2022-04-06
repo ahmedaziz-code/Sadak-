@@ -1,0 +1,10 @@
+{% extends 'content_base.html.twig' %}
+
+{% block content_body %}
+    <h1>Launch a new Event! ?</h1>
+
+{{ include('event_admin/_form.html.twig',{
+    button_text : 'Create!'
+}) }}
+
+{% endblock %}

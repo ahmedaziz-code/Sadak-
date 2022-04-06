@@ -1,0 +1,39 @@
+{% extends 'service/back_office/base.html.twig' %}
+
+{% block title %}
+    Modifier un service
+{% endblock %}
+{% block stylesheet %}
+    <style>
+        .invalid-feedback > ul li {
+            /* display: none; */
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 80%;
+            color: #f44336;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Modifier un service</h4>
+                    <p class="card-category"> </p>
+                </div>
+                <div class="card-body">
+                    {{ include ('service/back_office/_form.html.twig') }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
+

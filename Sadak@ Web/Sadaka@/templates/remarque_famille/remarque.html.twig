@@ -1,0 +1,17 @@
+{% extends "base-front.html.twig" %}
+{% block famille %}
+    {{ form_start(r, {'attr': {'novalidate':'novalidate'}}) }}
+    <table class="styled-table" style="margin: auto">
+        <tr>
+            <div class="form-widget">
+                <td >{{ form_label(r.remarque) }}</td>
+                <td>{{ form_widget(r.remarque) }}</td>
+                <td>{{ form_errors(r.remarque) }}</td>
+
+            </div>
+        </tr>
+    </table>
+    {{ form_end(r) }}
+{% endblock %}
+{% block famille2 %}
+{% endblock %}

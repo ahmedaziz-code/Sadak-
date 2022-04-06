@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Livraison{% endblock %}
+
+{% block body %}
+    <section style="margin: 50px">
+
+    </section>
+    <section class="icons-container">
+
+        <div class="icons">
+            <div class="content" >
+                <h3>Etape 1</h3>
+                <p  >Commander</p>
+            </div>
+        </div>
+
+        <div class="icons" style="background-color: #15275c">
+            <div class="content">
+                <h3>Etape 2</h3>
+                <p style="color: white">Livraison</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <div class="content">
+                <h3>Etape 3</h3>
+                <p>Confirmer</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <div class="content">
+                <h3>Etape 4</h3>
+                <p>Facture</p>
+            </div>
+        </div>
+
+    </section>
+    <br>
+
+<center><h3> entrez vos informations :</h3>
+ {{  include('livraison/_form.html.twig') }}</center>
+
+
+{% endblock %}

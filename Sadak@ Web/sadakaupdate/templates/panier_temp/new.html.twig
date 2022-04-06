@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PanierTemp{% endblock %}
+
+{% block body %}
+    <section style=" margin: 50px"></section>
+    <br>
+        <center><h1>Ajout au Panier</h1></center>
+    <br><br>
+        {% for flashMessage in app.session.flashbag.get('green') %}
+
+            <div style="color: white; background-color: green">
+                <center>{{ flashMessage }}</center>
+            </div>
+
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('red') %}
+
+            <div style="color: white; background-color: red">
+                <center>{{ flashMessage }}</center>
+            </div>
+
+        {% endfor %}
+
+        <center>
+            {{ include('panier_temp/_form.html.twig') }}
+        </center><br>
+    <br><br>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FAEEE0; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25; -fx-border-image-width: 5;" stylesheets="@../Css/table.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.FamilleVerifieeController">
+   <children>
+      <VBox layoutX="1132.0" layoutY="24.0" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: black; -fx-background-radius: 15;">
+         <children>
+            <FontAwesomeIconView fill="#f4a442" glyphName="CLOSE" onMouseClicked="#close" size="40" style="-fx-cursor: hand;" wrappingWidth="33.0">
+               <VBox.margin>
+                  <Insets left="8.0" top="3.0" />
+               </VBox.margin>
+            </FontAwesomeIconView>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="407.0" layoutY="24.0" prefHeight="72.0" prefWidth="386.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Familles vérifiées" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableFaVe" layoutX="618.0" layoutY="213.0" prefHeight="374.0" prefWidth="562.0" style="-fx-alignement: center;">
+        <columns>
+          <TableColumn fx:id="col_name" prefWidth="112.0" style="-fx-alignment: center;" text="       Nom Famille" />
+          <TableColumn fx:id="col_etat" prefWidth="110.0" style="-fx-alignment: center;" text="            Etat " />
+            <TableColumn fx:id="col_rmq" minWidth="1.0" prefWidth="108.0" style="-fx-alignment: center;" text="        Remarque" />
+            <TableColumn fx:id="col_date" prefWidth="131.0" style="-fx-alignment: center;" text="  Date de vérification" />
+            <TableColumn fx:id="col_action" prefWidth="98.0" text="        Action" />
+        </columns>
+      </TableView>
+      <TextField fx:id="nom_f" editable="false" layoutX="157.0" layoutY="327.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="45.0" prefWidth="250.0" promptText="Nom Famille" style="-fx-background-radius: 25;" />
+      <JFXComboBox fx:id="comboRmq" layoutX="157.0" layoutY="400.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="45.0" prefWidth="250.0" promptText="Remarque" style="-fx-background-radius: 25;" />
+      <VBox fx:id="btnVerif" layoutX="222.0" layoutY="531.0" prefHeight="56.0" prefWidth="121.0" style="-fx-background-color: black; -fx-background-radius: 25;">
+         <children>
+            <FontAwesomeIconView fill="#f4a442" glyphName="CHECK" onMouseClicked="#VerifierFamille" size="40" style="-fx-cursor: hand;" wrappingWidth="33.0">
+               <VBox.margin>
+                  <Insets left="43.0" top="7.0" />
+               </VBox.margin>
+            </FontAwesomeIconView>
+         </children>
+      </VBox>
+      <Label fx:id="UerName" layoutX="933.0" layoutY="26.0" prefHeight="45.0" prefWidth="173.0" />
+      <TextField fx:id="id_f" layoutX="208.0" layoutY="270.0" visible="false" />
+      <Label layoutX="268.0" layoutY="262.0" text="Verifier La Famille">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

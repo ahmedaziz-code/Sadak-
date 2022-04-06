@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" styleClass="mainFxmlClass" stylesheets="@../Css/consulteroeuvre.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Shop2Controller">
+    <children>
+      <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox prefHeight="744.0" prefWidth="834.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="85.0" prefWidth="563.0" style="-fx-background-color: #A65959;" styleClass="oeuvre-choisi" stylesheets="@../Css/Ajouterraef.css">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="55.0" prefWidth="199.0" style="-fx-background-color: white; -fx-background-radius: 25;" text="Shop" textFill="#a65959">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="400.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="522.0" styleClass="shadow" stylesheets="@../Css/consulteroeuvre.css" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <TextField fx:id="recho" prefHeight="40.0" prefWidth="749.0" promptText="tapez ici le nom" stylesheets="@../Css/affmesoeuves.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Cambria Bold" size="23.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="add-btn" />
+                           </styleClass>
+                        </TextField>
+                        <Button fx:id="rechbtn" mnemonicParsing="false" onAction="#rechercheO" prefHeight="40.0" prefWidth="44.0" styleClass="search-button" stylesheets="@../Css/affmesoeuves.css" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="18" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="panier" alignment="CENTER" mnemonicParsing="false" onAction="#voirpanier" prefHeight="40.0" prefWidth="100.0" styleClass="search-button" stylesheets="@../Css/affmesoeuves.css" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" size="29" textAlignment="CENTER" wrappingWidth="30.0" />
+                           </graphic></Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BASELINE_CENTER" prefHeight="446.0" prefWidth="654.0" VBox.vgrow="NEVER">
+                     <children>
+                        <ScrollPane fx:id="scrollO" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="955.0" styleClass="transparent" stylesheets="@../Css/affmesoeuves.css" HBox.hgrow="NEVER">
+                           <content>
+                              <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <HBox.margin>
+                              <Insets top="9.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <FontAwesomeIconView />
+   </children>
+    
+</AnchorPane>

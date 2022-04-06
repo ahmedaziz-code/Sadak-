@@ -1,0 +1,21 @@
+{{ form_start(form) }}
+
+<section class="contact" id="contact">
+
+
+   <center> <div class="row">
+
+        <table class="table  table-striped">
+            <tr><td><center> Nom  : </td>  <td>{{ form_widget(form.nom, { 'attr': {'class': 'box '} }) }}{{ form_errors(form.nom) }}</center></td></tr>
+            <tr><td>  Prenom : </td>  <td>{{ form_widget(form.prenom, { 'attr': {'class': 'box'} }) }}{{ form_errors(form.prenom) }}</td></tr>
+            <tr><td> Adresse :</td>  <td>{{ form_widget(form.adresse, { 'attr': {'class': 'box'} }) }}{{ form_errors(form.adresse) }}</td></tr>
+
+        </table>
+
+    </div> </center>
+    <button style="margin-bottom:10px;margin-top:10px" class="btn">{{ button_label|default('Suivant') }}</button>
+    <button style="margin-bottom:10px;margin-top:10px" class="btn"><a href="{{ path('panier_temp_index') }}">Retour</a></button>
+</section>
+
+
+{{ form_end(form) }}

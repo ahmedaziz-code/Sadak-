@@ -1,0 +1,60 @@
+{% extends '/backAdmin/back-office/tables.html.twig' %}
+
+{% block admin %}
+    <h1>All Users {{ users.getTotalItemCount }} </h1>
+    <form>
+        <div class="input-group mb-3">
+            <input type="text"
+                   name="q"
+                   class="form-control"
+                   placeholder="Search..."
+                   value="{{ app.request.query.get('q') }}"
+            >
+            <div class="input-group-append">
+                <button type="submit"
+                        class="btn btn-outline-secondary">
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <table border="1" class="table" style="margin: auto">
+        <thead>
+        <tr>
+
+            <td>Nom</td>
+            <td>Prenom</td>
+            <td>Email</td>
+            <td>Gouvernorat</td>
+            <td>Ville</td>
+            <td>Supprimer</td>
+            <td>Modifier</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for i in users %}
+            <tr >
+
+
+                <td>{{ i.firstName }}</td>
+                <td>{{ i.lastName }}</td>
+                <td>{{ i.email}}</td>
+                <td>{{ i.gouvernorat }}</td>
+                <td>{{ i.ville }}</td>
+                <td><a href="">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAPhJREFUWEftl2ENwjAQhb85wAIKwAGggOAAB4ACwAFScAAoAAngAAeQLvxotrXX7kayLNff99pvr69dr6Bno+gZD4MAGgEXYCq4+wAWwDtnF9o4dAaWiYu42lVibVmWC3QCNjkLAEfgkKppAnLifeoEyroarAFVHE1ySLkLOrkU6jkw0y1RU9+Aa2hOCegfAY+eOgOS7qVBOOR/xCcQzlhN5xkyIH8Xmo69OWQO+Q60uYcsQ5Yhy5D0bNU65Lc0ofYmVtP5z1X7ou0d0A5wDWfjkC5G17/ftZZU9GPg2RbI6dbAFpgowV6/eVy/HxySQ0qGfLkBSZ59AaJzWCXJNDkwAAAAAElFTkSuQmCC"/>
+                    </a></td>
+                <td><a href="">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAV9JREFUWEfl1eENwiAQBeDXCXQEnUDdQEdwA0dwFDdwBN1A3cBRdALNJZAQAtwDuaSN/aNJL/BxfcCAkT3DyDz4K9AcwAqA/D4AvJivYdWhNYALgIVDCGYH4KmhLECCubnOhPNTqN6gGPN2ohnbqZ6gFGbrIHcAIWqZy1QvUA7jMyPvQ9QewDWVpx6gVGbivMQ1ZqBcgGXxHiX/w5BLrmT3JY+BXzqU+kxHAKcoLwKSs0gewUiustu/FVTKTJwXHxUVI4UtIC3AMu4BwDkILYVpATEYpiZ7YNd0iJmIqSneHiyImYip0a4yKkPMREyNimEyxEzE1FAYDcRMxNTQGA0kJ6m/EFPbtjtGA32CpW2i09UEUwMKd6MZpgVkiqkBpYJJXwc1qS4djGGG4jFNMK0dMsNooJpOd6tl77JuE2oDTQpUCrW2UOZ9shmtu4yZUKuZPkhbocn7SYXapAPaoF/MD3UlNXZX7AAAAABJRU5ErkJggg=="/>
+                    </a></td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    {{ knp_pagination_render(users) }}
+
+{% endblock %}

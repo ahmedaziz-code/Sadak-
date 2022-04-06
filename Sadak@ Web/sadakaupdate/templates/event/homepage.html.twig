@@ -1,0 +1,263 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <!-- Article List -->
+
+            <div class="col-sm-12 col-md-8">
+
+                <!-- H1 Article -->
+                {% block slide %}
+                    <!DOCTYPE html>
+                    <html>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <style>
+
+
+
+
+                        /* Position the image container (needed to position the left and right arrows) */
+                        .container {
+                            position: relative;
+                        }
+
+                        /* Hide the images by default */
+                        .mySlides {
+                            display: none;
+                        }
+
+                        /* Add a pointer when hovering over the thumbnail images */
+                        .cursor {
+                            cursor: pointer;
+                        }
+
+                        /* Next & previous buttons */
+                        .prev,
+                        .next {
+                            cursor: pointer;
+                            position: absolute;
+                            top: 40%;
+                            width: auto;
+                            padding: 16px;
+                            margin-top: -50px;
+                            color: white;
+                            font-weight: bold;
+                            font-size: 20px;
+                            border-radius: 0 3px 3px 0;
+                            user-select: none;
+                            -webkit-user-select: none;
+                        }
+
+                        /* Position the "next button" to the right */
+                        .next {
+                            right: 0;
+                            border-radius: 3px 0 0 3px;
+                        }
+
+                        /* On hover, add a black background color with a little bit see-through */
+                        .prev:hover,
+                        .next:hover {
+                            background-color: rgba(0, 0, 0, 0.8);
+                        }
+
+                        /* Number text (1/3 etc) */
+                        .numbertext {
+                            color: #f2f2f2;
+                            font-size: 12px;
+                            padding: 8px 12px;
+                            position: absolute;
+                            top: 0;
+                        }
+
+                        /* Container for image text */
+                        .caption-container {
+                            text-align: center;
+                            background-color: #222;
+                            padding: 2px 16px;
+                            color: white;
+                        }
+
+                        .row:after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                        }
+
+                        /* Six columns side by side */
+                        .column {
+                            float: left;
+                            width: 16.66%;
+                        }
+
+                        /* Add a transparency effect for thumnbail images */
+                        .demo {
+                            opacity: 0.6;
+                        }
+
+                        .active,
+                        .demo:hover {
+                            opacity: 1;
+                        }
+                    </style>
+                    <body>
+
+{#                    <h2 style="text-align:center">Slideshow Gallery</h2>#}
+
+                    <div class="container">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 6</div>
+                            <img src="{{ asset('images/35662.png') }}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 6</div>
+                            <img src="{{ asset('images/35662.png') }}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 6</div>
+                            <img src="{{ asset('images/35662.png') }}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 6</div>
+                            <img src="{{ asset('images/35662.png') }}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 6</div>
+                            <img src="{{ asset('images/35662.png') }}" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">6 / 6</div>
+                            <img src="{{ asset('images/35662.png') }}" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <div class="row">
+                            <div class="column">
+                                <img class="demo cursor" src="{{ asset('images/35662.png') }}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ asset('images/35662.png') }}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ asset('images/35662.png') }}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ asset('images/35662.png') }}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ asset('images/35662.png') }}" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ asset('images/35662.png') }}" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+
+                        function plusSlides(n) {
+                            showSlides(slideIndex += n);
+                        }
+
+                        function currentSlide(n) {
+                            showSlides(slideIndex = n);
+                        }
+
+                        function showSlides(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("mySlides");
+                            var dots = document.getElementsByClassName("demo");
+                            var captionText = document.getElementById("caption");
+                            if (n > slides.length) {slideIndex = 1}
+                            if (n < 1) {slideIndex = slides.length}
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+                            for (i = 0; i < dots.length; i++) {
+                                dots[i].className = dots[i].className.replace(" active", "");
+                            }
+                            slides[slideIndex-1].style.display = "block";
+                            dots[slideIndex-1].className += " active";
+                            captionText.innerHTML = dots[slideIndex-1].alt;
+                        }
+                    </script>
+
+                    </body>
+                    </html>
+
+
+                {% endblock %}
+                <!-- Supporting Articles -->
+                {% for event in pagination %}
+                <div class="article-container my-1">
+                    <a href="{{ path('event_show', {slug: event.slug}) }}">
+                        <img class="article-img" src="{{ asset(event.imagePath) }}">
+                        <div class="article-title d-inline-block pl-3 align-middle">
+                            <span>{{ event.eventName }}</span>
+                            <small>({{ event.nonDeletedComments|length }} Comments )</small>
+                            <br>
+                            {% for tag in event.tags %}
+                                <small>
+                                    <span class="badge badge-light">{{ tag.name }}</span>
+                                </small>
+                            {% endfor %}
+                            <br>
+                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ event.eventOrganiser.avatarUrl }}"> {{ event.eventOrganiser.firstName}}</span>
+                            <span class="pl-5 article-details float-right">  {{event.publishedAt  ? event.publishedAt|ago :"unpub"}}</span>
+                        </div>
+                    </a>
+                    {% if is_granted('ROLE_USER') %}
+                    <button class="article-container my-1" style="border: 1px solid black;border-radius: 5px;background: grey;position: relative;margin-left: 200px;cursor: p">
+                        <a href="{{ path('email',{
+                            id: event.id
+                        }) }}">Participer</a></button>
+                    {% else %}
+                        <button class="article-container my-1" style="border: 1px solid black;border-radius: 5px;background: grey;position: relative;margin-left: 200px;cursor: p">
+                            <a href="{{ path('app_login') }}">Login</a></button>
+                    {% endif %}
+                </div>
+
+                {% endfor %}
+
+                {{ knp_pagination_render(pagination) }}
+
+            </div>
+
+            <!-- Right bar ad space -->
+
+
+            <div class="col-sm-12 col-md-4 text-center">
+                <div class="ad-space mx-auto mt-1 pb-2 pt-2">
+                    <img class="advertisement-img" src="{{ asset('images/space-ice.png') }}">
+                    <p><span class="advertisement-text">New:</span> Space Ice Cream!</p>
+                    <button class="btn btn-info">Buy Now!</button>
+                </div>
+
+                <div class="quote-space pb-2 pt-2 px-5">
+                    <h3 class="text-center pb-3">Trending Quotes</h3>
+                    <p><i class="fa fa-comment"></i> "Our two greatest problems are gravity and paperwork. We can lick gravity, but sometimes the paperwork is overwhelming." <br>— <a href="https://en.wikipedia.org/wiki/Wernher_von_Braun">Wernher von Braun, Rocket Engineer</a></p>
+
+                    <p class="pt-4"><i class="fa fa-comment"></i> "Let's face it, space is a risky business. I always considered every launch a barely controlled explosion." <br>— <a href="https://en.wikipedia.org/wiki/Aaron_Cohen_(Deputy_NASA_administrator)">Aaron Cohen, NASA Administrator</a></p>
+
+                    <p class="pt-4"><i class="fa fa-comment"></i> "If offered a seat on a rocket ship, don't ask what seat. Just get on."<br>— <a href="https://en.wikipedia.org/wiki/Christa_McAuliffe">Christa McAuliffe, Challenger Astronaut</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

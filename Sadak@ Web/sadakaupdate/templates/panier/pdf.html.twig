@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <section style="margin: 50px">
+
+    </section>
+    <section class="icons-container">
+
+        <div class="icons">
+            <div class="content" >
+                <h3>Etape 1</h3>
+                <p  >Commander</p>
+            </div>
+        </div>
+
+        <div class="icons" >
+            <div class="content">
+                <h3>Etape 2</h3>
+                <p >Livraison</p>
+            </div>
+        </div>
+
+        <div class="icons" >
+            <div class="content">
+                <h3>Etape 3</h3>
+                <p >Confirmer</p>
+            </div>
+        </div>
+
+        <div class="icons" style="background-color: #15275c">
+            <div class="content">
+                <h3>Etape 4</h3>
+                <p style="color: white">Facture</p>
+            </div>
+        </div>
+
+    </section>
+    <center><a style="margin-top: 30px; margin-bottom: 30px" href="{{ path('produit_index') }}" class="btn">Produits</a></center>
+    <br><br>
+    <center><h2>Votre commande est en cours de livraison !</h2></center>
+    <center><h2 style="color: rgba(0,123,255,.5)">Merci pour votre SadaKa ☺ </h2></center>
+    <center><div style="display: inline-block">
+            <a style="margin-top: 30px; margin-bottom: 30px" href="{{ path('panier_pdfnav') }}" class="btn">Voir facture</a>
+            <a style="margin-top: 30px; margin-bottom: 30px" href="{{ path('panier_pdfgen') }}" class="btn">Télécharger facture</a>
+        </div></center>
+    <br><br>
+    <center><img height="30%" width="30%" src="{{asset('/uploads/livraisonfichier_1.png')}}" alt="logo"></center>
+    <br><br>
+
+{% endblock %}

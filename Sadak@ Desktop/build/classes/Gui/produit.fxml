@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#click" prefHeight="112.0" prefWidth="673.0" stylesheets="@../Css/afficherop.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Produitdet">
+   <children>
+      <VBox layoutX="10.0" layoutY="7.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="94.0" prefWidth="663.0" style="-fx-background-color: #F8F8FF;" styleClass="oeuvre-choisi" stylesheets="@../Css/Ajouterraef.css">
+         <children>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="726.0" stylesheets="@../Css/affmesoeuves.css">
+               <children>
+                  <Label text="Nom Produit">
+                     <HBox.margin>
+                        <Insets left="40.0" top="6.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="128.0" layoutY="16.0" prefHeight="21.0" prefWidth="51.0" text="Image">
+                     <HBox.margin>
+                        <Insets left="70.0" top="6.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="229.0" layoutY="16.0" prefHeight="18.0" prefWidth="72.0" text="Quantite">
+                     <HBox.margin>
+                        <Insets left="70.0" top="6.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="373.0" layoutY="16.0" text="Prix Unitaire">
+                     <HBox.margin>
+                        <Insets left="40.0" top="6.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="460.0" layoutY="16.0" prefHeight="21.0" prefWidth="77.0" text="Prix Total">
+                     <HBox.margin>
+                        <Insets left="40.0" top="6.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="585.0">
+               <children>
+                  <Label fx:id="nameLabel" text="NomO">
+                     <HBox.margin>
+                        <Insets left="65.0" right="10.0" top="25.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="98.0" prefWidth="133.0">
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin>
+                     <children>
+                        <ImageView fx:id="img" fitHeight="58.0" fitWidth="72.0" layoutX="33.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Label fx:id="QteLabel" layoutX="156.0" layoutY="50.0" prefHeight="18.0" prefWidth="44.0" text="Qte">
+                     <HBox.margin>
+                        <Insets left="30.0" top="25.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="priceLable" layoutX="389.0" layoutY="50.0" text="PrixU">
+                     <HBox.margin>
+                        <Insets left="75.0" top="25.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="priceTLabel" layoutX="484.0" layoutY="50.0" prefHeight="21.0" prefWidth="60.0" text="PrixT">
+                     <HBox.margin>
+                        <Insets left="65.0" top="25.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="fruit-item" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

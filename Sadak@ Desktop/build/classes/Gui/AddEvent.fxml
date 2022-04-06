@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="854.0" prefWidth="918.0" style="-fx-background-color: #FAEEE0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.AddEventController">
+   <children>
+      <TextField fx:id="txtpath" layoutX="635.0" layoutY="273.0" prefHeight="45.0" prefWidth="230.0" />
+      <VBox layoutX="26.0" layoutY="135.0" prefHeight="706.0" prefWidth="879.0" stylesheets="@../Css/Design.css">
+         <styleClass>
+            <String fx:value="round" />
+            <String fx:value="white" />
+         </styleClass>
+      </VBox>
+      <VBox layoutX="848.0" layoutY="21.0" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="257.0" layoutY="33.0" prefHeight="72.0" prefWidth="421.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Ajouter des événements" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#f4a442" glyphName="CLOSE" layoutX="857.0" layoutY="59.0" onMouseClicked="#close" size="40" style="-fx-cursor: hand;" wrappingWidth="33.0" />
+      <Label layoutX="72.0" layoutY="541.0" prefHeight="76.0" prefWidth="183.0" text="Image">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="370.0" prefHeight="76.0" prefWidth="218.0" text="Description">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="191.0" prefHeight="76.0" prefWidth="247.0" text="Organisateur">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="479.0" layoutY="191.0" prefHeight="76.0" prefWidth="159.0" text="Nom (évé)">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="284.0" layoutY="207.0" prefHeight="45.0" prefWidth="183.0" />
+      <TextField fx:id="txtEname" layoutX="637.0" layoutY="207.0" prefHeight="45.0" prefWidth="230.0" />
+      <TextField fx:id="txtDescription" alignment="TOP_LEFT" layoutX="284.0" layoutY="372.0" prefHeight="149.0" prefWidth="589.0" />
+      <Button fx:id="btnimage" layoutX="65.0" layoutY="617.0" mnemonicParsing="false" onAction="#ImageChooser" prefHeight="59.0" prefWidth="191.0" style="-fx-background-color: #f4a442; -fx-background-radius: 25;" text="Selectionner " textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imageView" fitHeight="219.0" fitWidth="589.0" layoutX="283.0" layoutY="529.0" onDragDetected="#ImageChooser" opacity="0.75" pickOnBounds="true" />
+      <Button fx:id="btnAjouter" layoutX="61.0" layoutY="755.0" mnemonicParsing="false" onAction="#SaveEvent" prefHeight="63.0" prefWidth="144.0" style="-fx-background-color: black; -fx-background-radius: 25;" styleClass="btn" stylesheets="@../../../../New%20folder/Software-Connoisseur/sadaka/src/Gui/Gui.css" text="Ajouter" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="btnAjouter1" layoutX="215.0" layoutY="755.0" mnemonicParsing="false" onAction="#clean" onMouseClicked="#clean" prefHeight="59.0" prefWidth="125.0" style="-fx-background-color: black; -fx-background-radius: 25;" styleClass="btn" stylesheets="@../../../../New%20folder/Software-Connoisseur/sadaka/src/Gui/Gui.css" text="Clean" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Label layoutX="84.0" layoutY="294.0" prefHeight="76.0" prefWidth="172.0" text="Date Début">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtdate" layoutX="292.0" layoutY="301.0" prefHeight="48.0" prefWidth="137.0" />
+      <JFXDatePicker fx:id="datePicker" defaultColor="BLACK" editable="false" focusTraversable="false" layoutX="438.0" layoutY="296.0" onAction="#setDate" prefHeight="59.0" prefWidth="39.0" />
+      <Label layoutX="489.0" layoutY="288.0" prefHeight="76.0" prefWidth="172.0" text="Date Fin">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtdateF" layoutX="648.0" layoutY="302.0" prefHeight="48.0" prefWidth="127.0" />
+      <JFXDatePicker fx:id="datePickerF" defaultColor="BLACK" editable="false" focusTraversable="false" layoutX="787.0" layoutY="295.0" onAction="#setDateF" prefHeight="59.0" prefWidth="39.0" />
+   </children>
+</AnchorPane>

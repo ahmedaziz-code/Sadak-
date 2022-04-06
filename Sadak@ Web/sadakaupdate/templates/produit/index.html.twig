@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits index{% endblock %}
+
+{% block body %}
+ <section style="margin: 50px"></section>
+    <section class="featured" id="featured">
+
+        <h1 class="heading"> <span>Liste</span> des <span>Produits</span> </h1>
+        {% for flashMessage in app.session.flashbag.get('green') %}
+
+            <div style="color: white; background-color: green">
+                <center>{{ flashMessage }}</center>
+            </div>
+
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('red') %}
+
+            <div style="color: white; background-color: red">
+                <center>{{ flashMessage }}</center>
+            </div>
+
+        {% endfor %}
+        {% for produit in produits %}
+        <div class="swiper featured-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <img src="{{ asset('uploads/') ~ produit.image }}" alt="">
+                    <div class="content">
+                        <h3>{{ produit.nomProduit }}</h3>
+                        <div class="stars">
+                            {% if produit.quantiteProduit==0 %}
+                                    <span style="color: red"> hors stock</span>
+                                <div class="price">Prix : {{produit.prixProduit}} DT</div>
+                                {% else %}
+                                    <span style="font-size: 18px; font-style: italic;  color: #ac3e3e;"> {{ produit.quantiteProduit }} Produits </span>
+                                    <div class="price">Prix : {{produit.prixProduit}} DT</div>
+                                    <a href="{{ path('panier_temp_new', { 'refProduit': produit.refProduit })}}" class="btnn">Ajouter au Panier</a>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+
+
+    </section>
+
+
+{% endblock %}

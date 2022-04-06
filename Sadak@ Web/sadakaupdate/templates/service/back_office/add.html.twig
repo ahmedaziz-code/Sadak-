@@ -1,0 +1,89 @@
+{% extends 'service/back_office/base.html.twig' %}
+
+{% block title %}
+    Ajouter un service
+{% endblock %}
+{% block stylesheet %}
+    <style>
+        select > option {
+            color: black !important;
+        }
+
+        .invalid-feedback > ul li {
+            /* display: none; */
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 80%;
+            color: #f44336;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Ajouter un service</h4>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body">
+                    {{ include ('service/back_office/_form.html.twig') }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+
+            $('#service_dateFin').blur(function () {
+                var dateF = $(this).val();
+                var dateD = $('#service_dateDebut').val();
+                if (dateD > dateF) {
+                    alert('Date de debut est dépasser la date de fin ');
+                }
+            })
+
+            // $('#service_dateDebut').blur(function () {
+            //     var dateD = $(this).val();
+            //     var dateF = $('#service_dateFin').val();
+            //     if (dateD > dateF) {
+            //         alert('Date de debut est dépasser la date de fin ');
+            //     }
+            // })
+
+
+            $("#formService").validate({
+                rules: {
+                    'service[name]': "required",
+                    'service[numVert]': "required",
+                    'service[zoneDispo]': "required",
+                    'service[type]': "required",
+                    'service[description]': "required",
+                    'service[dateDebut]': "required",
+                    'service[dateFin]': "required",
+
+                },
+                messages: {
+                    'service[name]': "Entrer le nom de service",
+                    'service[numVert]': "Entrer le numeéro vert",
+                    'service[zoneDispo]': "Entrer la zone disponible",
+                    'service[type]': "Choisir un type",
+                    'service[description]': "Entrer une description",
+                    'service[dateDebut]': "Entrer date de début",
+                    'service[dateFin]': "Entrer date de fin ",
+                },
+                errorElement: "em",
+            });
+
+        })
+    </script>
+
+{% endblock %}
+

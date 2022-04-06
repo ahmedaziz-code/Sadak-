@@ -1,0 +1,70 @@
+{% extends 'admin/service/base.html.twig' %}
+
+{% block title %}
+    Liste des services
+{% endblock %}
+{% block stylesheet %}
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            {{ include('service/default/FlashBag/flashBag.html.twig') }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Liste des services</h4>
+                    <p class="card-category"></p>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                            <th>Titre</th>
+                            <th>Description</th>
+                            <th>Numéro vert</th>
+                            <th>Zone dispo</th>
+                            <th>Type</th>
+                            <th class="text-center">Action</th>
+                            </thead>
+                            <tbody>
+                            {% for s in services %}
+                                <tr>
+                                    <td>{{ s.name }}</td>
+                                    <td>{{ s.description|slice(0, 10) }} ...</td>
+                                    <td>{{ s.numVert }}</td>
+                                    <td>{{ s.zoneDispo }}</td>
+                                    <td>{{ s.type.name }}</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-info"
+                                           href="{{ path('admin_edit_service' , {service : s.id}) }}"><i
+                                                    class="fa fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-info"
+                                           href="{{ path('admin_detail_service' , {service : s.id}) }}"><i
+                                                    class="fa fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-info"
+                                           href="{{ path('admin_delete_service' , {service : s.id}) }}"><i
+                                                    class="fa fa-trash"></i></a>
+
+
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
+

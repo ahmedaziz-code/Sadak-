@@ -1,0 +1,34 @@
+/*
+// بسم الله الرحمن الرحيم 
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 25, 2021, 2:41:10 PM
+    Author     : alaak
+*/
+
+.round{
+    -fx-background-radius:25;
+}
+
+.white{
+    -fx-background-color: white;
+}
+
+.login-btn{
+    -fx-background-color: linear-gradient(to right, #F4A442,  #FAEEE0);
+   -fx-background-radius:25;
+}
+
+.login-half{
+    -fx-background-color: linear-gradient(to left top, #F4A442,  #FAEEE0);
+    
+}
+.orange{
+    -fx-background-color:#f4a442;
+}
+
+/*#f4a442 Button
+ #FAEEE0 background */

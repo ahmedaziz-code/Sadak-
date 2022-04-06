@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="880.0" prefWidth="1310.0" style="-fx-background-color: #FAEEE0;" stylesheets="@../Css/tableview.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.GestionDesUtilisateursController">
+   <children>
+      <VBox layoutX="1246.0" layoutY="10.0" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="445.0" layoutY="34.0" prefHeight="72.0" prefWidth="421.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Gestion des Utilisateurs" textFill="#f4a442">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+     
+      <TableView fx:id="EventTable" layoutX="125.0" layoutY="223.0" prefHeight="608.0" prefWidth="1083.0" style="-fx-background-radius: 25;">
+        <columns>
+            <TableColumn fx:id="orgCol" prefWidth="131.0" text="Organisateur" />
+            <TableColumn fx:id="idCol" maxWidth="138.0" minWidth="0.0" prefWidth="0.0" text="ID" visible="false" />
+            <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="154.0" text="Date" />
+          <TableColumn fx:id="neCol" minWidth="0.0" prefWidth="216.0" text="Nom événement" />
+            <TableColumn fx:id="imageCol" minWidth="0.0" prefWidth="146.0" text="Image" />
+            <TableColumn fx:id="desCol" prefWidth="248.0" text="Description" />
+            <TableColumn fx:id="buttonCol" maxWidth="192.0" minWidth="0.0" prefWidth="192.0" text="Modifier/Supprimer" />
+        </columns>
+      </TableView>
+      <HBox layoutX="148.0" layoutY="116.0" prefHeight="100.0" prefWidth="307.0" />
+      
+   </children>
+</AnchorPane>
